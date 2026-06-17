@@ -7,6 +7,7 @@ import Home from "./components/home/Home"
 import Mobile from "./components/mobile/Mobile"
 import App from "./App"
 import Hello from "./components/Hello"
+import Users from "./components/users/Users";
 
 const router=createBrowserRouter([
   {
@@ -14,7 +15,10 @@ const router=createBrowserRouter([
     Component: Root,
     children:[
       {index:true, Component: Home},
-      {path:'mobiles', Component: Mobile}
+      {path:'mobiles', Component: Mobile},
+      {path:'users',
+        loader: ()=>fetch('https://jsonplaceholder.typicode.com/users'),
+        Component: Users}
     ]
   },
   {
