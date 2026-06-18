@@ -5,11 +5,13 @@ import Sidebar from "../sidebar/Sidebar";
 import './root.css'
 
 const Root = () => {
+
   return (
     <div>
       <Header></Header>
       <div className="body">
         <Sidebar></Sidebar>
+
         <Outlet></Outlet>
       </div>
       <Footer></Footer>
