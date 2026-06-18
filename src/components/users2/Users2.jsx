@@ -1,11 +1,16 @@
-import { use } from "react";
+import { useLoaderData } from "react-router";
+import User2 from "./User2";
 
-const Users2 = ({ users2Res }) => {
-  const users2 = use(users2Res);
-  console.log(users2);
+const Users2 = () => {
+  const users = useLoaderData();
   return (
     <div>
-      <h3>User2</h3>
+      <h3>Number of Users: {users.length}</h3>
+      <div style={{display: "grid", gridTemplateColumns:'1fr 1fr 1fr'}}>
+        {users.map((user) => (
+          <User2 key={user.id} user={user}></User2>
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,3 +1,7 @@
 nav a.active {
   text-decoration: underline;
 }
+
+.deco a {
+  margin-right: 5px;
+}
